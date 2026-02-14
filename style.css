@@ -1,0 +1,222 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+
+  font-family: 'Inter', sans-serif;
+    background: #A1C2BA ;
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px;
+}
+
+
+
+.container {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+}
+
+
+
+.app-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+
+.search-box {
+    display: flex;
+    gap: 10px; 
+    margin-bottom: 30px;
+}
+
+.search-input {
+    flex: 1; 
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    transition: border-color 0.3s; 
+}
+
+.search-input:focus {
+    border-color: #667eea;
+}
+
+.search-btn {
+    padding: 15px 30px;
+    font-size: 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer; 
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+/* Button hover effect */
+.search-btn:hover {
+    transform: translateY(-2px); 
+    opacity: 0.9;
+}
+
+/* Button click effect */
+.search-btn:active {
+    transform: translateY(0); 
+}
+
+
+
+.loading {
+    text-align: center;
+    padding: 30px;
+}
+
+/* Spinning animation circle */
+.spinner {
+    border: 4px solid #f3f3f3; 
+    border-top: 4px solid #667eea; 
+    border-radius: 50%; 
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 15px; 
+    animation: spin 1s linear infinite; 
+}
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading p {
+    color: #666;
+    font-size: 14px;
+}
+/*error message*/
+
+.error {
+    background: #fee;
+    border: 2px solid #fcc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.error p {
+    color: #c33;
+    font-size: 16px;
+}
+
+/*WEATHER DISPLAY */
+
+.weather-display {
+    text-align: center;
+}
+
+.city-name {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Temperature styling */
+.temperature {
+    margin-bottom: 15px;
+}
+
+.temp-value {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.temp-unit {
+    font-size: 2rem;
+    color: #999;
+}
+
+/* Weather condition text (ex "Cloudy") */
+.weather-condition {
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 30px;
+    text-transform: capitalize; 
+}
+
+
+
+.weather-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+}
+
+.detail-item {
+    text-align: center;
+}
+
+.detail-label {
+    display: block;
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 5px;
+}
+
+.detail-value {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+.hidden {
+    display: none;
+}
+
+
+
+/* Adjustments for screens smaller than 600px */
+@media (max-width: 600px) {
+    .container {
+        padding: 25px;
+    }
+    
+    .app-title {
+        font-size: 1.5rem;
+    }
+    
+    .search-box {
+        flex-direction: column; 
+    }
+    
+    .search-btn {
+        width: 100%; 
+    }
+    
+    .temp-value {
+        font-size: 3rem;
+    }
+    
+    .weather-details {
+        grid-template-columns: 1fr; 
+    }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Simple Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <div class="container">
+        
+        
+        <h1 class="Weather-forecast">🌤️ Weather Forecast</h1>
+        
+        <!-- Search section: where user types city name -->
+        <div class="search-box">
+            <input 
+                type="text" 
+                id="cityInput" 
+                placeholder="Enter city name..."
+                class="search-input"
+            >
+            <!-- Search button - clicking this triggers the weather search -->
+            <button id="searchBtn" class="search-btn">Search</button>
+        </div>
+
+        <!-- Loading indicator - shows while fetching data from API -->
+        
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Fetching weather data...</p>
+        </div>
+
+        <!-- Error message - shows if city not found or API fails -->
+        
+        <div id="error" class="error hidden">
+            <p id="errorMessage">Something went wrong!</p>
+        </div>
+
+        <!-- Weather display - shows the weather information -->
+       
+        <div id="weatherDisplay" class="weather-display hidden">
+            
+            <!-- City name and country code -->
+            <h2 id="cityName" class="city-name">City Name</h2>
+            
+            <!-- Main temperature display -->
+            <div class="temperature">
+                <span id="temp" class="temp-value">--</span>
+                <span class="temp-unit">°C</span>
+            </div>
+            
+            
+            <p id="weatherCondition" class="weather-condition">Condition</p>
+            
+         
+            <div class="weather-details">
+                <!-- Feels like temperature -->
+                <div class="detail-item">
+                    <span class="detail-label">Feels Like</span>
+                    <span id="feelsLike" class="detail-value">--°C</span>
+                </div>
+                
+                <!-- Humidity percentage -->
+                <div class="detail-item">
+                    <span class="detail-label">Humidity</span>
+                    <span id="humidity" class="detail-value">--%</span>
+                </div>
+                
+                <!-- Wind speed -->
+                <div class="detail-item">
+                    <span class="detail-label">Wind Speed</span>
+                    <span id="windSpeed" class="detail-value">-- m/s</span>
+                </div>
+                
+                <!-- Atmospheric pressure -->
+                <div class="detail-item">
+                    <span class="detail-label">Pressure</span>
+                    <span id="pressure" class="detail-value">-- hPa</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
